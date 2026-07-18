@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Melchizedek Order Ministries International</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --purple-deep:   #1A0F2E;
+      --purple-royal:  #3B1F6E;
+      --purple-mid:    #5C3499;
+      --purple-light:  #9B6FD4;
+      --gold:          #C9A84C;
+      --gold-light:    #E8C97A;
+      --ivory:         #F8F5FF;
+      --white:         #FFFFFF;
+      --ribbon:        #7B2FBE;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      background: var(--purple-deep);
+      color: var(--ivory);
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 3rem;
+      background: rgba(26, 15, 46, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+    }
+
+    .nav-brand {
+      font-family: 'Cinzel', serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      text-transform: uppercase;
+      max-width: 220px;
+      line-height: 1.4;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: 'Cinzel', serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--ivory);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover { color: var(--gold); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 8rem 2rem 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Radiant background glow */
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 60% at 50% 45%, rgba(92, 52, 153, 0.45) 0%, transparent 70%),
+        radial-gradient(ellipse 100% 80% at 50% 100%, rgba(26, 15, 46, 1) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    /* Subtle star field */
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(1px 1px at 15% 20%, rgba(255,255,255,0.4) 0%, transparent 100%),
+        radial-gradient(1px 1px at 80% 15%, rgba(255,255,255,0.3) 0%, transparent 100%),
+        radial-gradient(1px 1px at 60% 70%, rgba(255,255,255,0.2) 0%, transparent 100%),
+        radial-gradient(1.5px 1.5px at 30% 80%, rgba(255,255,255,0.3) 0%, transparent 100%),
+        radial-gradient(1px 1px at 90% 60%, rgba(255,255,255,0.25) 0%, transparent 100%),
+        radial-gradient(1px 1px at 45% 10%, rgba(255,255,255,0.35) 0%, transparent 100%),
+        radial-gradient(1px 1px at 5% 55%, rgba(255,255,255,0.2) 0%, transparent 100%),
+        radial-gradient(1.5px 1.5px at 70% 40%, rgba(255,255,255,0.3) 0%, transparent 100%);
+      pointer-events: none;
+    }
+
+    /* Emblem container */
+    .emblem-wrap {
+      position: relative;
+      z-index: 2;
+      margin-bottom: 2.5rem;
+    }
+
+    /* Halo ring */
+    .halo {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 230px; height: 230px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(201, 168, 76, 0.35);
+      box-shadow:
+        0 0 40px rgba(201, 168, 76, 0.15),
+        0 0 80px rgba(92, 52, 153, 0.25),
+        inset 0 0 30px rgba(201, 168, 76, 0.05);
+      animation: halo-pulse 4s ease-in-out infinite;
+    }
+
+    .halo-outer {
+      width: 270px; height: 270px;
+      border: 1px solid rgba(201, 168, 76, 0.12);
+      animation-delay: 0.5s;
+    }
+
+    @keyframes halo-pulse {
+      0%, 100% { opacity: 0.6; transform: translate(-50%, -50%) scale(1); }
+      50%       { opacity: 1;   transform: translate(-50%, -50%) scale(1.03); }
+    }
+
+    .dove-svg {
+      width: 180px;
+      height: 180px;
+      position: relative;
+      z-index: 3;
+      filter: drop-shadow(0 0 20px rgba(255,255,255,0.25)) drop-shadow(0 0 40px rgba(155, 111, 212, 0.4));
+      animation: dove-float 6s ease-in-out infinite;
+    }
+
+    @keyframes dove-float {
+      0%, 100% { transform: translateY(0px); }
+      50%       { transform: translateY(-8px); }
+    }
+
+    .hero-eyebrow {
+      font-family: 'Cinzel', serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.4em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 1.2rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-title {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(1.8rem, 4vw, 3.2rem);
+      font-weight: 700;
+      line-height: 1.15;
+      color: var(--white);
+      letter-spacing: 0.05em;
+      max-width: 780px;
+      position: relative;
+      z-index: 2;
+      text-shadow: 0 2px 40px rgba(92, 52, 153, 0.6);
+    }
+
+    .hero-title span {
+      color: var(--gold);
+    }
+
+    .hero-divider {
+      width: 80px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      margin: 2rem auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-sub {
+      font-family: 'Lato', sans-serif;
+      font-size: 1rem;
+      font-weight: 300;
+      font-style: italic;
+      color: rgba(248, 245, 255, 0.75);
+      letter-spacing: 0.08em;
+      max-width: 520px;
+      line-height: 1.8;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-cta {
+      margin-top: 2.8rem;
+      display: flex;
+      gap: 1.2rem;
+      justify-content: center;
+      position: relative;
+      z-index: 2;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      font-family: 'Cinzel', serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--purple-deep);
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      padding: 0.9rem 2.4rem;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 24px rgba(201, 168, 76, 0.3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(201, 168, 76, 0.45);
+    }
+
+    .btn-outline {
+      font-family: 'Cinzel', serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: transparent;
+      padding: 0.9rem 2.4rem;
+      border: 1px solid rgba(201, 168, 76, 0.5);
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--gold);
+      background: rgba(201, 168, 76, 0.07);
+    }
+
+    /* ── SCROLL INDICATOR ── */
+    .scroll-cue {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+      z-index: 2;
+      opacity: 0.5;
+    }
+
+    .scroll-cue span {
+      font-family: 'Cinzel', serif;
+      font-size: 0.55rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, var(--gold), transparent);
+      animation: scroll-drop 2s ease-in-out infinite;
+    }
+
+    @keyframes scroll-drop {
+      0%   { opacity: 0; transform: scaleY(0); transform-origin: top; }
+      50%  { opacity: 1; transform: scaleY(1); }
+      100% { opacity: 0; transform: scaleY(1) translateY(10px); }
+    }
+
+    /* ── GOLD BANNER ── */
+    .gold-banner {
+      background: linear-gradient(135deg, rgba(201, 168, 76, 0.1), rgba(201, 168, 76, 0.05));
+      border-top: 1px solid rgba(201, 168, 76, 0.25);
+      border-bottom: 1px solid rgba(201, 168, 76, 0.25);
+      padding: 1.8rem 3rem;
+      text-align: center;
+    }
+
+    .gold-banner p {
+      font-family: 'Cinzel', serif;
+      font-size: 0.85rem;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      color: var(--gold);
+    }
+
+    /* ── SECTIONS ── */
+    section {
+      padding: 6rem 2rem;
+    }
+
+    .section-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-eyebrow {
+      font-family: 'Cinzel', serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(1.5rem, 3vw, 2.4rem);
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 1.5rem;
+    }
+
+    .section-rule {
+      width: 60px;
+      height: 2px;
+      background: var(--gold);
+      margin-bottom: 2rem;
+    }
+
+    .section-body {
+      font-size: 1.05rem;
+      line-height: 1.9;
+      color: rgba(248, 245, 255, 0.8);
+      font-weight: 300;
+      max-width: 680px;
+    }
+
+    /* ── MISSION ── */
+    #mission {
+      background: linear-gradient(180deg, var(--purple-deep) 0%, rgba(59, 31, 110, 0.3) 100%);
+    }
+
+    .mission-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .mission-verse {
+      border-left: 2px solid var(--gold);
+      padding-left: 1.8rem;
+      margin-top: 2.5rem;
+    }
+
+    .mission-verse p {
+      font-family: 'Lato', sans-serif;
+      font-style: italic;
+      font-size: 1.05rem;
+      color: rgba(248, 245, 255, 0.7);
+      line-height: 1.9;
+    }
+
+    .mission-verse cite {
+      display: block;
+      margin-top: 0.8rem;
+      font-family: 'Cinzel', serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      color: var(--gold);
+      font-style: normal;
+    }
+
+    .values-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.4rem;
+    }
+
+    .values-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .value-icon {
+      flex-shrink: 0;
+      width: 36px;
+      height: 36px;
+      border: 1px solid rgba(201, 168, 76, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Cinzel', serif;
+      font-size: 0.7rem;
+      color: var(--gold);
+      margin-top: 2px;
+    }
+
+    .value-text strong {
+      display: block;
+      font-family: 'Cinzel', serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      color: var(--white);
+      margin-bottom: 0.3rem;
+    }
+
+    .value-text span {
+      font-size: 0.9rem;
+      color: rgba(248, 245, 255, 0.65);
+      line-height: 1.7;
+    }
+
+    /* ── MINISTRIES ── */
+    #ministries {
+      background: rgba(59, 31, 110, 0.15);
+    }
+
+    .ministries-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3.5rem;
+    }
+
+    .ministry-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(201, 168, 76, 0.15);
+      padding: 2.5rem 2rem;
+      transition: border-color 0.3s, background 0.3s, transform 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ministry-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .ministry-card:hover {
+      border-color: rgba(201, 168, 76, 0.4);
+      background: rgba(255, 255, 255, 0.06);
+      transform: translateY(-4px);
+    }
+
+    .ministry-card:hover::before { opacity: 1; }
+
+    .card-icon {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 1.5rem;
+    }
+
+    .card-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 0.8rem;
+      letter-spacing: 0.05em;
+    }
+
+    .card-body {
+      font-size: 0.9rem;
+      color: rgba(248, 245, 255, 0.65);
+      line-height: 1.8;
+    }
+
+    /* ── ABOUT MELCHIZEDEK ── */
+    #about {
+      background: linear-gradient(180deg, rgba(26, 15, 46, 0) 0%, rgba(26, 15, 46, 0.8) 100%);
+    }
+
+    .about-pull {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(1.1rem, 2vw, 1.6rem);
+      font-weight: 400;
+      color: var(--gold);
+      line-height: 1.6;
+      max-width: 800px;
+      margin-bottom: 2.5rem;
+    }
+
+    /* ── EVENTS ── */
+    #events {
+      background: rgba(59, 31, 110, 0.1);
+    }
+
+    .events-list {
+      margin-top: 3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+
+    .event-row {
+      display: grid;
+      grid-template-columns: 80px 1fr auto;
+      gap: 2rem;
+      align-items: center;
+      padding: 1.8rem 0;
+      border-bottom: 1px solid rgba(201, 168, 76, 0.1);
+      transition: background 0.2s;
+    }
+
+    .event-row:hover {
+      background: rgba(255,255,255,0.02);
+      padding-left: 0.5rem;
+    }
+
+    .event-date {
+      text-align: center;
+    }
+
+    .event-date .day {
+      display: block;
+      font-family: 'Cinzel', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .event-date .month {
+      display: block;
+      font-family: 'Cinzel', serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(201, 168, 76, 0.6);
+      margin-top: 0.2rem;
+    }
+
+    .event-info strong {
+      display: block;
+      font-family: 'Cinzel', serif;
+      font-size: 0.95rem;
+      color: var(--white);
+      margin-bottom: 0.3rem;
+    }
+
+    .event-info span {
+      font-size: 0.85rem;
+      color: rgba(248, 245, 255, 0.55);
+    }
+
+    .event-tag {
+      font-family: 'Cinzel', serif;
+      font-size: 0.55rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--purple-light);
+      border: 1px solid rgba(155, 111, 212, 0.4);
+      padding: 0.35rem 0.8rem;
+    }
+
+    /* ── CONTACT ── */
+    #contact {
+      background: linear-gradient(180deg, var(--purple-deep) 0%, rgba(26, 8, 50, 1) 100%);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      margin-top: 3rem;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .form-group label {
+      font-family: 'Cinzel', serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .form-group input,
+    .form-group textarea {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(201, 168, 76, 0.2);
+      color: var(--ivory);
+      font-family: 'Lato', sans-serif;
+      font-size: 0.95rem;
+      padding: 0.9rem 1.2rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--gold);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+
+    .info-block strong {
+      display: block;
+      font-family: 'Cinzel', serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+
+    .info-block p {
+      font-size: 0.95rem;
+      color: rgba(248, 245, 255, 0.7);
+      line-height: 1.7;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid rgba(201, 168, 76, 0.15);
+      padding: 2.5rem 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(26, 8, 50, 1);
+    }
+
+    .footer-brand {
+      font-family: 'Cinzel', serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      color: rgba(201, 168, 76, 0.6);
+    }
+
+    .footer-copy {
+      font-size: 0.75rem;
+      color: rgba(248, 245, 255, 0.3);
+      letter-spacing: 0.05em;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .footer-links a {
+      font-family: 'Cinzel', serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(248, 245, 255, 0.4);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--gold); }
+
+    /* ── REVEAL ANIMATION ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { gap: 1.2rem; }
+      .mission-grid,
+      .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .ministries-grid { grid-template-columns: 1fr 1fr; }
+      footer { flex-direction: column; gap: 1rem; text-align: center; }
+    }
+
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+      .ministries-grid { grid-template-columns: 1fr; }
+      .event-row { grid-template-columns: 60px 1fr; }
+      .event-tag { display: none; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .dove-svg, .halo { animation: none; }
+      .reveal { transition: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-brand">Melchizedek Order<br>Ministries Int'l</div>
+    <ul class="nav-links">
+      <li><a href="#mission">Mission</a></li>
+      <li><a href="#ministries">Ministries</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#events">Events</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <!-- Dove Emblem -->
+    <div class="emblem-wrap">
+      <div class="halo halo-outer"></div>
+      <div class="halo"></div>
+      <svg class="dove-svg" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg" aria-label="White Dove with Purple Ribbon emblem">
+        <!-- Glow backdrop circle -->
+        <circle cx="90" cy="90" r="82" fill="rgba(92,52,153,0.08)" />
+
+        <!-- Dove body -->
+        <ellipse cx="88" cy="95" rx="42" ry="26" fill="white" />
+
+        <!-- Wing (left/back) -->
+        <path d="M 55 88 C 30 68 20 55 35 48 C 50 42 68 58 72 78 Z"
+              fill="rgba(230,230,240,0.9)" />
+
+        <!-- Wing (right/front) -->
+        <path d="M 88 80 C 100 55 128 44 138 52 C 148 62 128 80 108 88 Z"
+              fill="white" />
+
+        <!-- Wing feather detail (right) -->
+        <path d="M 92 82 C 104 62 125 52 133 58 C 140 65 122 78 104 85 Z"
+              fill="rgba(200,200,220,0.5)" />
+
+        <!-- Tail feathers -->
+        <path d="M 50 100 C 40 110 28 112 30 118 C 32 122 46 116 52 108 Z"
+              fill="white" />
+        <path d="M 48 104 C 36 118 22 122 25 128 C 28 132 44 124 50 112 Z"
+              fill="rgba(230,230,240,0.85)" />
+        <path d="M 53 98 C 44 108 34 108 36 114 C 38 118 50 112 55 104 Z"
+              fill="white" />
+
+        <!-- Head -->
+        <ellipse cx="118" cy="82" rx="17" ry="15" fill="white" />
+
+        <!-- Eye -->
+        <circle cx="124" cy="78" r="3.5" fill="#1A0F2E" />
+        <circle cx="125" cy="77" r="1" fill="white" />
+
+        <!-- Beak -->
+        <path d="M 133 80 L 148 76 L 140 82 Z" fill="rgba(201,168,76,0.9)" />
+
+        <!-- Purple ribbon in beak -->
+        <!-- Ribbon body flowing from beak -->
+        <path d="M 140 79 C 152 74 162 68 168 72 C 162 76 155 82 148 82 Z"
+              fill="#7B2FBE" opacity="0.9" />
+        <path d="M 140 80 C 152 76 162 76 168 72 C 162 80 155 86 148 84 Z"
+              fill="#9B3FDE" opacity="0.7" />
+        <!-- Ribbon tail left -->
+        <path d="M 148 82 C 145 90 142 96 138 98 C 136 92 138 85 140 80 Z"
+              fill="#7B2FBE" opacity="0.85" />
+        <!-- Ribbon tail right -->
+        <path d="M 148 84 C 148 92 150 100 154 103 C 155 96 154 88 148 82 Z"
+              fill="#6A1FA8" opacity="0.85" />
+        <!-- Ribbon highlight -->
+        <path d="M 148 80 C 156 76 162 72 166 72 C 162 74 156 78 150 80 Z"
+              fill="rgba(200,160,255,0.5)" />
+
+        <!-- Body shading -->
+        <ellipse cx="82" cy="100" rx="28" ry="14" fill="rgba(200,200,220,0.2)" />
+
+        <!-- Gold halo ring around dove -->
+        <circle cx="90" cy="90" r="82" fill="none"
+                stroke="rgba(201,168,76,0.18)" stroke-width="1" />
+      </svg>
+    </div>
+
+    <p class="hero-eyebrow">Est. in Faith &nbsp;·&nbsp; Ordained in Purpose</p>
+
+    <h1 class="hero-title">
+      Melchizedek Order<br>
+      <span>Ministries International</span>
+    </h1>
+
+    <div class="hero-divider"></div>
+
+    <p class="hero-sub">
+      A royal priesthood walking in peace, righteousness, and the eternal order—
+      bringing light to every nation.
+    </p>
+
+    <div class="hero-cta">
+      <a href="#mission" class="btn-primary">Discover Our Mission</a>
+      <a href="#contact" class="btn-outline">Connect With Us</a>
+    </div>
+
+    <div class="scroll-cue">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- GOLD BANNER -->
+  <div class="gold-banner">
+    <p>"Thou art a priest forever after the order of Melchizedek." — Psalm 110:4</p>
+  </div>
+
+  <!-- MISSION -->
+  <section id="mission">
+    <div class="section-inner">
+      <div class="mission-grid reveal">
+        <div>
+          <p class="section-eyebrow">Our Mission</p>
+          <h2 class="section-title">Called to Serve,<br>Ordained to Lead</h2>
+          <div class="section-rule"></div>
+          <p class="section-body">
+            Melchizedek Order Ministries International is a global community of believers
+            united in the ancient and eternal priesthood—an order not of lineage, but
+            of divine appointment. We exist to equip the saints, to proclaim the Kingdom,
+            and to walk in the fullness of our high-priestly calling through Christ Jesus.
+          </p>
+          <div class="mission-verse">
+            <p>
+              "For this Melchizedek, king of Salem, priest of the Most High God, met Abraham
+              returning from the slaughter of the kings and blessed him."
+            </p>
+            <cite>Hebrews 7:1</cite>
+          </div>
+        </div>
+        <div>
+          <ul class="values-list">
+            <li>
+              <div class="value-icon">I</div>
+              <div class="value-text">
+                <strong>Intercession</strong>
+                <span>Standing in the gap through prayer, lifting every nation and people before the throne of grace.</span>
+              </div>
+            </li>
+            <li>
+              <div class="value-icon">II</div>
+              <div class="value-text">
+                <strong>Righteousness & Peace</strong>
+                <span>Embodying the twin pillars of Salem—righteousness in conduct, peace in proclamation.</span>
+              </div>
+            </li>
+            <li>
+              <div class="value-icon">III</div>
+              <div class="value-text">
+                <strong>Discipleship</strong>
+                <span>Raising up whole-life disciples who walk in authority, humility, and supernatural power.</span>
+              </div>
+            </li>
+            <li>
+              <div class="value-icon">IV</div>
+              <div class="value-text">
+                <strong>Global Outreach</strong>
+                <span>Carrying the Gospel without borders, with compassion for the poor, the lost, and the overlooked.</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MINISTRIES -->
+  <section id="ministries">
+    <div class="section-inner">
+      <div class="reveal">
+        <p class="section-eyebrow">Our Ministries</p>
+        <h2 class="section-title">Many Members, One Body</h2>
+        <div class="section-rule"></div>
+      </div>
+      <div class="ministries-grid">
+
+        <!-- Card 1 -->
+        <div class="ministry-card reveal">
+          <svg class="card-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="24" r="22" stroke="rgba(201,168,76,0.3)" stroke-width="1"/>
+            <path d="M24 12 L24 36 M14 18 L34 18 M14 30 L34 30" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          <h3 class="card-title">Word & Teaching Ministry</h3>
+          <p class="card-body">
+            Rooted in sound doctrine, our teachers and apostolic voices proclaim the
+            full counsel of Scripture—equipping believers for every good work.
+          </p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="ministry-card reveal">
+          <svg class="card-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="24" r="22" stroke="rgba(201,168,76,0.3)" stroke-width="1"/>
+            <path d="M16 32 C16 24 20 18 24 14 C28 18 32 24 32 32" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+            <path d="M20 32 L28 32" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          <h3 class="card-title">Prayer & Intercession</h3>
+          <p class="card-body">
+            Our intercessors keep the altar burning—covering communities, cities,
+            and nations with persistent, faith-filled prayer and prophetic declaration.
+          </p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="ministry-card reveal">
+          <svg class="card-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="24" r="22" stroke="rgba(201,168,76,0.3)" stroke-width="1"/>
+            <circle cx="24" cy="20" r="5" stroke="#C9A84C" stroke-width="1.5"/>
+            <path d="M14 34 C14 28 18 26 24 26 C30 26 34 28 34 34" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+          </svg>
+          <h3 class="card-title">Pastoral Care</h3>
+          <p class="card-body">
+            With the heart of the Good Shepherd, our pastoral team walks alongside
+            believers through seasons of growth, trial, grief, and renewal.
+          </p>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="ministry-card reveal">
+          <svg class="card-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="24" r="22" stroke="rgba(201,168,76,0.3)" stroke-width="1"/>
+            <path d="M16 16 L32 16 L32 36 L16 36 Z" stroke="#C9A84C" stroke-width="1.5" stroke-linejoin="round" fill="none"/>
+            <path d="M20 22 L28 22 M20 26 L28 26 M20 30 L25 30" stroke="#C9A84C" stroke-width="1.2" stroke-linecap="round"/>
+          </svg>
+          <h3 class="card-title">Schools of Ministry</h3>
+          <p class="card-body">
+            We train and release the next generation of ministers, prophets, and
+            servant-leaders through structured teaching, mentorship, and hands-on ministry.
+          </p>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="ministry-card reveal">
+          <svg class="card-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="24" r="22" stroke="rgba(201,168,76,0.3)" stroke-width="1"/>
+            <path d="M14 28 C14 22 18 18 24 16 C30 18 34 22 34 28 L30 32 L24 36 L18 32 Z"
+                  stroke="#C9A84C" stroke-width="1.5" fill="none" stroke-linejoin="round"/>
+          </svg>
+          <h3 class="card-title">Community Outreach</h3>
+          <p class="card-body">
+            Mercy expressed in action—feeding, clothing, and empowering the vulnerable
+            in our communities as an expression of the Kingdom made tangible.
+          </p>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="ministry-card reveal">
+          <svg class="card-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="24" r="22" stroke="rgba(201,168,76,0.3)" stroke-width="1"/>
+            <circle cx="24" cy="24" r="9" stroke="#C9A84C" stroke-width="1.5" fill="none"/>
+            <path d="M24 15 L24 12 M24 33 L24 36 M15 24 L12 24 M33 24 L36 24"
+                  stroke="#C9A84C" stroke-width="1.2" stroke-linecap="round"/>
+          </svg>
+          <h3 class="card-title">Global Missions</h3>
+          <p class="card-body">
+            From Jerusalem to the uttermost parts of the earth—partnering with local
+            churches and missionaries to plant the Gospel where it has not yet been heard.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-inner">
+      <div class="reveal">
+        <p class="section-eyebrow">The Order of Melchizedek</p>
+        <h2 class="section-title">A Priesthood Without End</h2>
+        <div class="section-rule"></div>
+        <p class="about-pull">
+          "King of Righteousness. King of Peace. Priest of the Most High God."
+        </p>
+        <p class="section-body">
+          Melchizedek stands as one of Scripture's most profound mysteries—a priest-king
+          who blessed Abraham, received his tithe, and foreshadowed the eternal priesthood
+          of Jesus Christ. The Letter to the Hebrews reveals that Christ holds His office
+          permanently, by the power of an indestructible life, in this same order.
+          <br /><br />
+          Melchizedek Order Ministries International was born from the conviction that
+          the Church is called to walk in that same priestly anointing—to offer spiritual
+          sacrifices, to bless and not curse, to stand as mediators between heaven and
+          earth. Our name is our identity: royal, holy, set apart, yet fully engaged with
+          the world God so loves.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EVENTS -->
+  <section id="events">
+    <div class="section-inner">
+      <div class="reveal">
+        <p class="section-eyebrow">Upcoming Gatherings</p>
+        <h2 class="section-title">Come and Encounter</h2>
+        <div class="section-rule"></div>
+      </div>
+      <div class="events-list reveal">
+        <div class="event-row">
+          <div class="event-date">
+            <span class="day">20</span>
+            <span class="month">July</span>
+          </div>
+          <div class="event-info">
+            <strong>Sunday Covenant Gathering</strong>
+            <span>10:00 AM · Main Sanctuary · Open to All</span>
+          </div>
+          <div class="event-tag">Worship</div>
+        </div>
+        <div class="event-row">
+          <div class="event-date">
+            <span class="day">26</span>
+            <span class="month">July</span>
+          </div>
+          <div class="event-info">
+            <strong>Night of Intercession</strong>
+            <span>7:00 PM · Prayer Chapel · All Night Prayer Vigil</span>
+          </div>
+          <div class="event-tag">Prayer</div>
+        </div>
+        <div class="event-row">
+          <div class="event-date">
+            <span class="day">09</span>
+            <span class="month">Aug</span>
+          </div>
+          <div class="event-info">
+            <strong>Ministers' Convocation 2026</strong>
+            <span>Three-Day Summit · Apostolic Teaching & Ordination Services</span>
+          </div>
+          <div class="event-tag">Conference</div>
+        </div>
+        <div class="event-row">
+          <div class="event-date">
+            <span class="day">23</span>
+            <span class="month">Aug</span>
+          </div>
+          <div class="event-info">
+            <strong>School of Ministry — New Cohort</strong>
+            <span>Registration Open · 12-Week Intensive · All Levels Welcome</span>
+          </div>
+          <div class="event-tag">Training</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-inner">
+      <div class="reveal">
+        <p class="section-eyebrow">Get in Touch</p>
+        <h2 class="section-title">We Would Love to Hear From You</h2>
+        <div class="section-rule"></div>
+      </div>
+      <div class="contact-grid reveal">
+        <form class="contact-form" onsubmit="handleSubmit(event)">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" placeholder="Your name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="your@email.com" required />
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" placeholder="How can we serve you?" />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" placeholder="Write your message here…"></textarea>
+          </div>
+          <button type="submit" class="btn-primary" style="align-self:flex-start; cursor:pointer;">
+            Send Message
+          </button>
+          <p id="form-confirm" style="display:none; color:var(--gold); font-family:'Cinzel',serif; font-size:0.8rem; letter-spacing:0.1em;">
+            ✦ Thank you — your message has been received.
+          </p>
+        </form>
+
+        <div class="contact-info">
+          <div class="info-block">
+            <strong>Address</strong>
+            <p>Melchizedek Order Ministries International<br>
+               P.O. Box 1001<br>
+               Your City, State 00000</p>
+          </div>
+          <div class="info-block">
+            <strong>Email</strong>
+            <p>info@melchizedekministries.org</p>
+          </div>
+          <div class="info-block">
+            <strong>Phone</strong>
+            <p>+1 (000) 000-0000</p>
+          </div>
+          <div class="info-block">
+            <strong>Service Times</strong>
+            <p>Sundays · 10:00 AM & 6:00 PM<br>
+               Wednesdays · 7:00 PM (Bible Study)<br>
+               Fridays · 6:30 PM (Prayer)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-brand">Melchizedek Order Ministries International</div>
+    <ul class="footer-links">
+      <li><a href="#mission">Mission</a></li>
+      <li><a href="#ministries">Ministries</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="footer-copy">&copy; 2026 MOMI · All Rights Reserved</div>
+  </footer>
+
+  <script>
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach((el, i) => {
+      el.style.transitionDelay = `${(i % 4) * 0.1}s`;
+      observer.observe(el);
+    });
+
+    // Form stub
+    function handleSubmit(e) {
+      e.preventDefault();
+      document.getElementById('form-confirm').style.display = 'block';
+      e.target.reset();
+    }
+  </script>
+
+</body>
+</html>
